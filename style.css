@@ -1,0 +1,563 @@
+/* General styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #0a0a0a;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Header Section Styling */
+header {
+    background-color: black;
+    padding: 20px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: center; /* Centers everything horizontally */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    margin-right: 40px;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-right: 40px;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 1.1rem;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #3498db;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.nav-buttons .btn,
+.nav-buttons .transparent-btn {
+    font-size: 1rem;
+    padding: 12px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.nav-buttons .btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+}
+
+.nav-buttons .transparent-btn {
+    background-color: transparent;
+    border: 2px solid #3498db;
+    color: #3498db;
+}
+
+.nav-buttons .btn:hover {
+    background-color: #2980b9;
+}
+
+.nav-buttons .transparent-btn:hover {
+    background-color: #3498db;
+    color: white;
+}
+
+/* Hero Section */
+.hero {
+    margin-top: 80px;
+    padding: 50px 20px;
+}
+/* Title 3D Animation */
+.title {
+    font-size: 4rem;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    transition: transform 0.5s ease, color 0.3s ease;
+    z-index: 2;
+    font-family: 'Arial', sans-serif;
+}
+
+.title::before {
+    content: "adTask.ai"; /* Duplicate the text */
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: rgba(255, 255, 255, 0.1); /* Lighter color for the shadow effect */
+    z-index: -1;
+    filter: blur(3px); /* Adding blur for the shadow text effect */
+    transform: rotateX(60deg) rotateY(30deg) translateZ(-50px); /* 3D transformation for depth */
+    transition: transform 0.5s ease, filter 0.3s ease;
+}
+
+/* Hover effect for the title */
+.title:hover {
+    transform: translateY(-10px) scale(1.1) rotateY(10deg) rotateX(10deg); /* Adding scale and rotation on hover */
+    color: #ff00ff; /* Changing color on hover */
+}
+
+/* Adding more depth to the title text */
+.title:hover::before {
+    transform: rotateX(70deg) rotateY(40deg) translateZ(-80px); /* Stronger 3D effect */
+    filter: blur(5px); /* Increase blur on hover */
+}
+
+/* Section Container (to align boxes in a column) */
+.section-container {
+    display: flex;
+    flex-direction: column; /* Arrange sections in a column */
+    gap: 20px; /* Add space between sections */
+    padding: 20px;
+}
+
+/* Styling for each Section Box */
+.section-box {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1), 0 5px 10px rgba(0, 0, 0, 0.05);
+    transform: rotateX(5deg) rotateY(5deg);
+    transition: all 0.3s ease-in-out;
+    width: 100%; /* Make each box take full width */
+    margin: 0;
+}
+
+/* Hover effect for 3D box */
+.section-box:hover {
+    transform: rotateX(0deg) rotateY(0deg) scale(1.05);
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* Section Titles */
+.section-box h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Paragraph and List Styling */
+.section-box p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+.section-box ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.section-box li {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Testimonials Styling */
+.testimonial {
+    margin-bottom: 20px;
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+    .section-box {
+        width: 100%; /* Stack boxes on top of each other on smaller screens */
+    }
+}
+
+
+
+/* Social Media Icons */
+.social-icons {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 0;
+    background: #121212;
+}
+
+.social-icons li {
+    display: inline-block;
+}
+
+.social-icons li a {
+    font-size: 30px;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.social-icons li a:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.close-btn {
+    font-size: 30px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #ff0000;
+}
+
+/* Transparent Button */
+.transparent-btn {
+    background-color: transparent;  /* Make the background completely transparent */
+    border: 2px solid #007bff;  /* Visible blue border */
+    color: #007bff;  /* Text color to match the border */
+    padding: 10px 20px;
+    border-radius: 30px;  /* Rounded corners */
+    display: flex;
+    align-items: center;  /* Aligns icon and text in the center */
+    gap: 10px;  /* Space between the icon and text */
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-decoration: none; /* Ensure the text doesn't get underlined */
+}
+
+.transparent-btn i {
+    font-size: 20px;  /* Size of the icon */
+    color: #007bff;  /* Icon color to match the text */
+}
+
+/* Hover Effect */
+.transparent-btn:hover {
+    background-color: rgba(0, 123, 255, 0.1);  /* Light blue background on hover */
+    color: #0056b3;  /* Darker blue color for text */
+    border-color: #0056b3;  /* Darker border on hover */
+}
+
+/* Focus Effect (Optional but good for accessibility) */
+.transparent-btn:focus {
+    outline: none;  /* Remove default outline */
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);  /* Add focus ring */
+}
+
+/* Contact Us Section Styling */
+.contact-us {
+    background: black; /* Gradient background */
+    padding: 60px 20px;
+    color: white;
+    text-align: center;
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: white;
+    color: #333;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.contact-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.contact-description {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.contact-form {
+    margin-bottom: 40px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+.input-group i {
+    margin-right: 10px;
+    color: #3498db;
+}
+
+.btn.submit-btn {
+    padding: 14px 30px;
+    background-color: #3498db;
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.btn.submit-btn:hover {
+    background-color: blanchedalmond;
+}
+
+.contact-info {
+    margin-top: 30px;
+}
+
+.contact-info h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.contact-info p {
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+.contact-info a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* YouTube Video Section */
+.youtube-video {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #000; /* Black background */
+    position: relative;
+    overflow: hidden;
+}
+
+.youtube-video .video-container {
+    max-width: 1200px; /* Increased width */
+    height: 600px; /* Increased height */
+    margin: 0 auto;
+    position: relative;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), 0 0 15px rgba(255, 255, 255, 0.3); /* Enhanced box-shadow with multiple layers */
+    border-radius: 18px; /* Larger rounded corners */
+    transform: perspective(1200px) rotateX(5deg) rotateY(5deg); /* Adding depth and angle for a more dynamic 3D effect */
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Smooth transition for hover effects */
+    z-index: 1; /* Ensure the video container is above other elements */
+    position: relative;
+}
+
+.youtube-video .video-container:hover {
+    transform: perspective(1200px) rotateX(0deg) rotateY(0deg) scale(1.05); /* Hover effect to zoom in and reset 3D angle */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 255, 255, 0.5); /* Stronger shadow on hover */
+}
+
+.youtube-video iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 12px; /* Rounded corners for iframe */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); /* Glowing white border effect */
+    transition: transform 0.3s ease-in-out, filter 0.3s ease; /* Smooth transformation */
+}
+
+.youtube-video iframe:hover {
+    transform: scale(1.1); /* Slight zoom-in effect on hover */
+    filter: brightness(1.2); /* Slight brightness increase for hover effect */
+}
+
+.youtube-video h2 {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    color: #fff;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.5), 0 10px 30px rgba(0, 0, 0, 0.3); /* Multi-layered text shadow for more dynamic effect */
+}
+
+/* Add the "AdTask.AI" text behind the video */
+.youtube-video::before {
+    content: "AdTask.AI";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg); /* Rotated text behind the video */
+    font-size: 6rem;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.1); /* Light color for background text */
+    z-index: -1; /* Keep text behind the video */
+    white-space: nowrap;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-family: 'Arial', sans-serif;
+}
+
+.youtube-video p {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-top: 10px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); /* Text shadow for paragraph */
+}
+
+/* 3D Button Effect */
+.btn.primary {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #ff6600;
+    border: 2px solid #ff6600;
+    border-radius: 8px;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    overflow: hidden;
+}
+
+.btn.primary::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: -1;
+    transform: rotateX(10deg) translateZ(-10px); /* Adding depth */
+    transition: transform 0.3s ease;
+}
+
+/* 3D Hover Effect */
+.btn.primary:hover {
+    transform: translateY(-5px) scale(1.05) rotateX(5deg); /* Button rises and rotates on hover */
+    background-color: #e65c00; /* Darker shade on hover */
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2); /* Adding shadow for depth */
+}
+
+/* Button active state */
+.btn.primary:active {
+    transform: translateY(2px) scale(1) rotateX(0deg); /* Button moves down on click */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1); /* Smaller shadow when active */
+}
+
+/* Button text effect */
+.btn.primary:hover::before {
+    transform: rotateX(20deg) translateZ(-20px); /* Stronger 3D effect on hover */
+}
+    
+    /* Footer Section */
+footer {
+    background-color: #333;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Social Icons Container */
+.social-icons {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Social Icon Styling */
+.social-icons li {
+    display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+/* Social Icon Link */
+.social-icons a {
+    color: #fff;
+    font-size: 2rem;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+/* 3D Hover Effect on Icons */
+.social-icons li:hover {
+    transform: translateY(-10px) rotateY(20deg) scale(1.1); /* Move up, rotate, and scale */
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2); /* Adding shadow for depth */
+}
+
+/* Change color of icons on hover */
+.social-icons li:hover a {
+    color: #ff6600; /* Change color of icons when hovered */
+}
+
+/* Close Button (Hide it with a 3D effect on hover) */
+.close-btn {
+    font-size: 2rem;
+    color: #fff;
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.close-btn:hover {
+    transform: rotate(180deg) scale(1.2); /* Rotate and scale on hover */
+    color: #ff6600; /* Change color of the close icon */
+}
